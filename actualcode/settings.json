@@ -1,0 +1,12 @@
+{
+  "prelude":"True",
+  "info":"True",
+  "color":{
+    "error":"red",
+    "prompt":"green",
+    "uname":"green",
+    "hname":"green",
+    "pform":"green",
+    "maccolor":"green"
+  }
+}

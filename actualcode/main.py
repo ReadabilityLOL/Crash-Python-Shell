@@ -10,11 +10,8 @@ from pathlib import Path
 import glob
 import lupa
 import json
-import pandas
-import hashlib
 import platform
 import distro
-
 # user = getpass.getuser()
 # password = getpass.getpass()
 
@@ -86,7 +83,10 @@ def help():
 
 def main():
   #run prelude 
-    if settings["prelude"] == "True":subprocess.run(["sh","prelude.sh"])
+    try:
+      if settings["prelude"] == "True":subprocess.run(["sh","prelude.sh"])
+    except Exception as o:
+      print(f"Prelude Error,{o}")
   #aliases
     with open("alias.json") as o:
       permalias = json.load(o)
@@ -121,7 +121,6 @@ def main():
           inp_split = [x for x in inp.split("&")]
           for x in inp_split:
             x=x.strip()
-            #history
             if x == "exit": 
                 break
             elif os.path.isdir(x) == True:
@@ -139,9 +138,9 @@ def main():
               import antigravity
             else:
               try:
-                print(lua.eval(x))
-              except:
                 execute_command(x)
+              except Exception as o:
+                print(o)
         except KeyboardInterrupt:
           print("\n")
           continue

@@ -18,9 +18,12 @@ import distro
 lua = lupa.LuaRuntime()
 just_fix_windows_console()
 home_directory = Path.home()
-with open("settings.json") as o:
-  settings = json.load(o)
-  
+try:
+  with open("settings.json") as o:
+    settings = json.load(o)
+except Exception as o:
+  print(f"Json Error: {o}")
+
 def execute_command(command):
     """execute commands and handle piping"""
     try:
@@ -105,7 +108,8 @@ def main():
 
     while 1:
         try:
-          inp = input(colored(f"{os.getcwd()}{'#' if os.geteuid() == 0 else''}> ",settings["color"]["prompt"]))
+          # inp = input(colored(f"{os.getcwd()}{'#' if os.geteuid() == 0 else''}> ",settings["color"]["prompt"]))
+          inp = input(colored(f"{os.getcwd()}{'#' if os.geteuid() == 0 else''}{settings['prompt']} ",settings["color"]["prompt"]))
           # inp = ObjectName.getip(f"{os.getcwd()}{'#' if os.geteuid() == 0 else''}>", "str",caseSensitive="y",compulsoryInput="n")
           #alias swap
           with open("history.txt","a",) as o:
@@ -130,7 +134,7 @@ def main():
             elif x == "help " or x.endswith(" help"):
                 help()
             elif x.strip().startswith("alias"):
-              y = x.replace("alias ",'').split("=")
+              y = x.replace("alias ",'').replace('"','').replace("'","").split("=")
               alias [y[0].strip()] = y[1].strip()
             elif x.strip().startswith("glob ") or x.strip().endswith("glob"):
               print(glob.glob(x.strip().removeprefix("glob ")))
@@ -138,9 +142,12 @@ def main():
               import antigravity
             else:
               try:
-                execute_command(x)
-              except Exception as o:
-                print(o)
+                print(eval(x))
+              except Exception:
+                try:
+                  execute_command(x)
+                except Exception as o:
+                  print(o)
         except KeyboardInterrupt:
           print("\n")
           continue
@@ -149,4 +156,7 @@ def main():
           continue
 
 if '__main__' == __name__:
-  main()
+  try:
+    main()
+  except Exception as o:
+    print(f"Error:{o}")

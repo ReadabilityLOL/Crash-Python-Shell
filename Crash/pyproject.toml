@@ -2,9 +2,8 @@
 name = "Crash-Python-Shell Josh"
 version = "0.1.0"
 description = ""
-authors = ["Joshua Anand", "joshua.anand316@gmail.com"]
+authors = ["Joshua Anand"]
 
-description = "A shell made in python"
 readme = "README.md"
 
 [build-system]

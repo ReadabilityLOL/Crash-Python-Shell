@@ -12,6 +12,9 @@ import lupa
 import json
 import platform
 import distro
+from math import *
+from random import *
+
 # user = getpass.getuser()
 # password = getpass.getpass()
 
@@ -120,7 +123,7 @@ def main():
               inp = inp.replace(x,alias[x]) 
          
           #multiline stuff
-          inp = inp.replace("and","&").replace("&&","&").replace(";","&")
+          inp = inp.replace("and ","&").replace("&&","&").replace(";","&")
           inp = inp.replace("\n","&")
           inp_split = [x for x in inp.split("&")]
           for x in inp_split:

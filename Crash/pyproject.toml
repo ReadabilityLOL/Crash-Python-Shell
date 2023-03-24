@@ -7,6 +7,10 @@ authors = ["Joshua Anand", "joshua.anand316@gmail.com"]
 description = "A shell made in python"
 readme = "README.md"
 
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -31,9 +35,7 @@ readchar = "^4.0.3"
 debugpy = "^1.6.2"
 replit-python-lsp-server = {extras = ["yapf", "rope", "pyflakes"], version = "^1.5.9"}
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+
 
 [project.urls]
 "Homepage" = "https://github.com/ReadabilityLOL/Crash-Python-Shell"

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Crash-Python-Shell Josh"
+name = "Crash-Python-Shell-Josh"
 version = "0.1.0"
 description = ""
 authors = ["Joshua Anand"]

@@ -4,6 +4,9 @@ version = "0.1.0"
 description = ""
 authors = ["Joshua Anand", "joshua.anand316@gmail.com"]
 
+description = "A shell made in python"
+readme = "README.md"
+
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.11"
 numpy = "^1.22.2"
@@ -12,7 +15,6 @@ Flask = "^2.2.0"
 urllib3 = "^1.26.12"
 tabulate = "^0.9.0"
 termcolor = "^2.2.0"
-prompt-toolkit = "^3.0.38"
 colorama = "^0.4.6"
 keyboard = "^0.13.5"
 readchar = "^4.0.3"
@@ -26,3 +28,7 @@ replit-python-lsp-server = {extras = ["yapf", "rope", "pyflakes"], version = "^1
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[project.urls]
+"Homepage" = "https://github.com/pypa/sampleproject"
+"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"

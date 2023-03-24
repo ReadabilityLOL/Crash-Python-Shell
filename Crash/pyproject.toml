@@ -2,7 +2,7 @@
 name = "python-template"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Joshua Anand", "joshua.anand316@gmail.com"]
 
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.11"
@@ -16,10 +16,8 @@ prompt-toolkit = "^3.0.38"
 colorama = "^0.4.6"
 keyboard = "^0.13.5"
 readchar = "^4.0.3"
-getch = "^1.0"
-pandas = "^1.5.3"
-lupa = "^1.14.1"
-tabCompletion = "^1.0.0"
+
+
 
 [tool.poetry.dev-dependencies]
 debugpy = "^1.6.2"

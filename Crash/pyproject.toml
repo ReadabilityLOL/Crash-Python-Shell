@@ -7,6 +7,12 @@ authors = ["Joshua Anand", "joshua.anand316@gmail.com"]
 description = "A shell made in python"
 readme = "README.md"
 
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.11"
 numpy = "^1.22.2"

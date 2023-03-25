@@ -5,7 +5,6 @@ import socket
 import getpass
 from termcolor import colored
 from colorama import just_fix_windows_console
-from getmac import get_mac_address as gma
 from pathlib import Path
 import glob
 import lupa
@@ -101,14 +100,10 @@ def main():
       hname = settings["color"]["hname"]
       uname = settings["color"]["uname"]
       pform = settings["color"]["pform"]
-      maccolor = settings["color"]["maccolor"]
-      mac = gma()
       system = platform.system().replace("Darwin","Mac").replace("Linux",distro.name())
       print(f"Running on {colored(system,pform)} {colored(platform.release(),pform)} \nVersion is {colored(platform.version(),pform)}")
       print(f'Hostname is {colored(socket.gethostname(),hname)}')
       print(f"Username is {colored(getpass.getuser(),uname)}")
-      print(f"Mac Address is {colored(mac,maccolor)}\n")
-
     while 1:
         try:
           # inp = input(colored(f"{os.getcwd()}{'#' if os.geteuid() == 0 else''}> ",settings["color"]["prompt"]))

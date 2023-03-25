@@ -7,7 +7,6 @@ from termcolor import colored
 from colorama import just_fix_windows_console
 from pathlib import Path
 import glob
-import lupa
 import json
 import platform
 import distro
@@ -17,7 +16,6 @@ from random import *
 # user = getpass.getuser()
 # password = getpass.getpass()
 
-lua = lupa.LuaRuntime()
 just_fix_windows_console()
 home_directory = Path.home()
 try:

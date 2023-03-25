@@ -34,6 +34,8 @@ readchar = "^4.0.3"
 debugpy = "^1.6.2"
 replit-python-lsp-server = {extras = ["yapf", "rope", "pyflakes"], version = "^1.5.9"}
 
+[tool.poetry.scripts]
+my_app = 'mypackage.my_module:my_method'
 
 
 [project.urls]
